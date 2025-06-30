@@ -170,6 +170,12 @@ helm install kind-prometheus prometheus-community/kube-prometheus-stack --namesp
 kubectl get svc -n monitoring
 kubectl get namespace
 ```
+---
+
+Grafana intial admin password
+```bash
+kubectl --namespace monitoring get secrets kind-prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+```
 
 ---
 
